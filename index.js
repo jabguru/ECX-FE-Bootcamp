@@ -1,14 +1,15 @@
 class Course
 {
-    constructor(course_code="ABC123",course_unit=0,course_title="Untitled",score=0)
+    constructor(course_code="ABC123",course_unit=0,course_title="Untitled",score=0, tgp=0)
     {
       
         this.code = course_code;
         this.title = course_title;
         this.unit=course_unit;
         this.score=score;
-        this.assignGrade(score);
-        
+        this.assignGrade(score);        
+        this.tgp=((this.unit)*(this.points));
+
     }
 
     assignGrade(grade) 
@@ -43,18 +44,16 @@ class Course
             else
                 this.grade="F";   
     }
-
-
-
 }
 
 const message = document.getElementById('message');
 const courselist = [];
 const courselistDiv = document.getElementById('course-list');
-let totalunits = 0;
-let totalscore = 0;
+var totalunits = 0;
+var totalscore = 0;
 const form = document.getElementById('details');
 const addCourseBtn = document.getElementById('addcourse');
+const calculateGPBtn = document.getElementById('calculate');
 
 function addCourse(e)
 {
@@ -77,6 +76,8 @@ function addCourse(e)
 
                     const course = new Course(code,unit,title,score);
                     totalunits +=unit;
+                    totalscore +=course.tgp;
+
                     courselist.push(course);
 
                     let mode = 'light';
@@ -159,7 +160,12 @@ function createElement(el,content="")
 
 addCourseBtn.addEventListener('click',addCourse);
 
+const displayGP = document.getElementById('gp');
+
 function calculateGP()
 {
-
+    let gradePoint = totalscore/totalunits;
+    displayGP.textContent = "GP: " + gradePoint;
 }
+
+calculateGPBtn.addEventListener('click',calculateGP);

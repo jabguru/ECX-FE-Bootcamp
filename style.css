@@ -50,7 +50,7 @@ button
     width:100%;
 }
 
-#addcourse
+#addcourse, #calculate
 {
     font-size: 0.8em;
     display: block;
@@ -63,11 +63,24 @@ button
     margin: 5px auto;
 }
 
-#addcourse i
+#addcourse i, #calculate i
 {
     position: absolute;
     right:12px;
     top:5px;
+}
+
+#gp
+{
+    font-size: 0.8em;
+    display: block;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px solid #2B8DAC;
+    padding: 10px 50px 10px 10px;
+    color: #2B8DAC;
+    position: relative;
+    margin: 5px auto;
 }
 
 /*
@@ -189,7 +202,7 @@ COURSE-LIST
         position: absolute;
         width: 30vw;
         right: 10%;
-        bottom: 30%;
+        bottom: 50%;
         font-size: 2em;
         padding-right: 60px;
         cursor:pointer;
@@ -198,6 +211,32 @@ COURSE-LIST
     {
         font-size: 1.2em;
         top:10px
+    }
+
+    #calculate
+    {      
+        position: fixed;
+        width: 30vw;
+        right: 11.9%;
+        bottom: 58%;
+        font-size: 2em;
+        padding-right: 60px;
+        cursor:pointer;
+    }
+    #calculate i
+    {
+        font-size: 1.2em;
+        top:10px
+    }
+
+    #gp
+    {      
+        position: fixed;
+        width: 30vw;
+        right: 11.9%;
+        bottom: 46%;
+        font-size: 2em;
+        padding-right: 60px;
     }
     
 }
